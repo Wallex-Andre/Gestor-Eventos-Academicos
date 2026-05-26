@@ -87,37 +87,37 @@ O sistema permite cadastrar:
 
 ## 🟣 Splash Screen
 
-![Splash](prints/splash_screen.png)
+<img src="prints/splash_screen.png" width="260"/>
 
 ---
 
 ## 🏠 Tela Principal
 
-![Tela Principal](prints/tela_principal.png)
+<img src="prints/tela_principal.png" width="260"/>
 
 ---
 
 ## ➕ Cadastro de Evento
 
-![Cadastro Evento](prints/cadastro_evento.png)
+<img src="prints/cadastro_evento.png" width="260"/>
 
 ---
 
 ## 📅 Todos os Eventos
 
-![Cadastro Evento](prints/todos_eventos.png)
+<img src="prints/todos_eventos.png" width="260"/>
 
 ---
 
 ## 📅 Calendário com Evento
 
-![Calendário](prints/calendario_evento.png)
+<img src="prints/calendario_evento.png" width="260"/>
 
 ---
 
 ## 📊 Dashboard
 
-![Dashboard](prints/dashboard.png)
+<img src="prints/dashboard.png" width="260"/>
 
 ---
 
@@ -137,109 +137,3 @@ O sistema permite cadastrar:
 
 ```text
 app-debug.apk
-```
-
-2. Envie para o celular
-
-3. Abra o APK
-
-4. Permita instalação de fontes desconhecidas
-
-5. Clique em instalar
-
-6. Abra o aplicativo normalmente
-
----
-
-# 🚀 Como Executar no Android Studio
-
-## 1️⃣ Clonar o projeto
-
-```bash
-git clone [URL_DO_REPOSITORIO](https://github.com/Wallex-Andre/Gestor-Eventos-Academicos.git)
-```
-
----
-
-## 2️⃣ Abrir no Android Studio
-
-- Abrir Android Studio
-- Selecionar:
-
-```text
-Open Project
-```
-
-- Escolher a pasta do projeto
-
----
-
-## 3️⃣ Sincronizar Gradle
-
-Aguardar a mensagem:
-
-```text
-Gradle Sync Finished
-```
-
----
-
-## 4️⃣ Executar
-
-- Conectar dispositivo Android
-OU
-- Abrir emulador
-
-Depois clicar em:
-
-```text
-Run ▶
-```
-
----
-
-# 🗄 Banco de Dados
-
-O aplicativo utiliza SQLite local para armazenamento dos eventos.
-
-## 📄 Tabela Principal
-
-```sql
-Evento
-```
-
-## 📌 Campos
-
-| Campo | Tipo |
-|---|---|
-| id | INTEGER |
-| titulo | TEXT |
-| tipo | TEXT |
-| materia | TEXT |
-| descricao | TEXT |
-| data | TEXT |
-| horaInicio | TEXT |
-| horaFim | TEXT |
-| links | TEXT |
-| status | TEXT |
-| prioridade | TEXT |
-| concluido | INTEGER |
-
----
-
-# 📌 Requisitos
-
-- Android 5.0+
-- Android Studio
-- Kotlin
-- Gradle
-
----
-
-# 📖 Conclusão
-
-O projeto Gestor de Eventos Acadêmicos foi desenvolvido com o objetivo de auxiliar estudantes na organização de tarefas e compromissos acadêmicos.
-
-Durante o desenvolvimento foram aplicados conceitos de desenvolvimento Android com Kotlin, utilização de banco de dados SQLite, RecyclerView, notificações, manipulação de datas e personalização de interface.
-
-O aplicativo apresenta funcionalidades completas de gerenciamento de eventos, oferecendo uma experiência prática e funcional para organização acadêmica.
