@@ -1,0 +1,66 @@
+<resources>
+
+    <string name="app_name">Gestor de Eventos Acadêmicos</string>
+
+    <!-- Splash -->
+    <string name="splash_titulo">Gestor Acadêmico</string>
+    <string name="splash_subtitulo">Organize sua vida acadêmica</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard">Dashboard</string>
+    <string name="tema">Tema do aplicativo</string>
+    <string name="tema_claro">Modo Claro</string>
+    <string name="tema_escuro">Modo Escuro</string>
+    <string name="tema_sistema">Usar tema do sistema</string>
+
+    <string name="total_eventos">Total de eventos: %1$d</string>
+    <string name="total_concluidos">Concluídos: %1$d</string>
+
+    <!-- Evento -->
+    <string name="titulo">Título</string>
+    <string name="tipo">Tipo</string>
+    <string name="materia">Matéria</string>
+    <string name="descricao">Descrição</string>
+    <string name="inicio">Hora início</string>
+    <string name="fim">Hora fim</string>
+    <string name="links">Links</string>
+
+    <string name="salvar">Salvar Evento</string>
+
+    <string name="evento_salvo">Evento salvo!</string>
+
+    <string name="preencha_campos">
+        Preencha os campos obrigatórios
+    </string>
+
+    <string name="data_texto">Data: %1$s</string>
+
+    <!-- Ações -->
+    <string name="editar">Editar</string>
+    <string name="excluir">Excluir</string>
+    <string name="concluir">Concluir</string>
+    <string name="desfazer">Desfazer</string>
+
+    <!-- Calendário -->
+    <string name="anterior">Anterior</string>
+    <string name="proximo">Próximo</string>
+
+    <string name="dom">DOM</string>
+    <string name="seg">SEG</string>
+    <string name="ter">TER</string>
+    <string name="qua">QUA</string>
+    <string name="qui">QUI</string>
+    <string name="sex">SEX</string>
+    <string name="sab">SAB</string>
+
+    <string name="todos_eventos">Todos Eventos</string>
+
+    <string name="nenhum_evento">
+        Nenhum evento
+    </string>
+
+    <string name="novo_evento">
+        Novo evento
+    </string>
+
+</resources>

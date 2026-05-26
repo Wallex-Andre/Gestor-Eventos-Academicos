@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="?android:colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/txtData"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:textColor="?android:textColorPrimary"
+
+            android:textSize="20sp"
+
+            android:textStyle="bold"
+
+            android:layout_marginBottom="16dp"/>
+
+        <!-- TÍTULO -->
+
+        <EditText
+            android:id="@+id/edtTitulo"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:hint="@string/titulo"
+
+            android:inputType="textCapSentences"
+
+            android:autofillHints="titulo"
+
+            android:textColor="?android:textColorPrimary"
+
+            android:textColorHint="#BBBBBB"/>
+
+        <!-- TAG -->
+
+        <AutoCompleteTextView
+            android:id="@+id/edtTipo"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="12dp"
+
+            android:hint="@string/tipo"
+
+            android:inputType="textCapWords"
+
+            android:autofillHints="tipo"
+
+            android:textColor="?android:textColorPrimary"
+
+            android:textColorHint="#BBBBBB"/>
+
+        <!-- MATÉRIA -->
+
+        <AutoCompleteTextView
+            android:id="@+id/edtMateria"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="12dp"
+
+            android:hint="@string/materia"
+
+            android:inputType="textCapWords"
+
+            android:autofillHints="materia"
+
+            android:textColor="?android:textColorPrimary"
+
+            android:textColorHint="#BBBBBB"/>
+
+        <!-- DESCRIÇÃO -->
+
+        <EditText
+            android:id="@+id/edtDescricao"
+
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+
+            android:layout_marginTop="12dp"
+
+            android:hint="@string/descricao"
+
+            android:gravity="top"
+
+            android:inputType="textMultiLine|textCapSentences"
+
+            android:autofillHints="descricao"
+
+            android:textColor="?android:textColorPrimary"
+
+            android:textColorHint="#BBBBBB"/>
+
+        <!-- HORA INÍCIO -->
+
+        <EditText
+            android:id="@+id/edtInicio"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="12dp"
+
+            android:hint="@string/inicio"
+
+            android:focusable="false"
+
+            android:clickable="true"
+
+            android:cursorVisible="false"
+
+            android:inputType="time"
+
+            android:autofillHints="inicio"
+
+            android:textColor="?android:textColorPrimary"
+
+            android:textColorHint="#BBBBBB"/>
+
+        <!-- HORA FIM -->
+
+        <EditText
+            android:id="@+id/edtFim"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="12dp"
+
+            android:hint="@string/fim"
+
+            android:focusable="false"
+
+            android:clickable="true"
+
+            android:cursorVisible="false"
+
+            android:inputType="time"
+
+            android:autofillHints="fim"
+
+            android:textColor="?android:textColorPrimary"
+
+            android:textColorHint="#BBBBBB"/>
+
+        <!-- LINKS -->
+
+        <EditText
+            android:id="@+id/edtLinks"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="12dp"
+
+            android:hint="@string/links"
+
+            android:inputType="textUri"
+
+            android:autofillHints="links"
+
+            android:textColor="?android:textColorPrimary"
+
+            android:textColorHint="#BBBBBB"/>
+
+        <!-- PRIORIDADE -->
+
+        <Spinner
+            android:id="@+id/spinnerPrioridade"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="12dp"/>
+
+        <!-- BOTÃO -->
+
+        <Button
+            android:id="@+id/btnSalvar"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="20dp"
+
+            android:text="@string/salvar"/>
+    </LinearLayout>
+
+</ScrollView>
