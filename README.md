@@ -8,7 +8,7 @@ O sistema foi criado com foco em organização estudantil, produtividade e prati
 
 # 👨‍💻 Desenvolvedor
 
-Wallex André
+Wallex André Adriano dos Santos
 
 ---
 
