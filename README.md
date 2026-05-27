@@ -114,6 +114,9 @@ O aplicativo permite cadastrar:
 <p align="center">
   <img src="prints/onboarding_1.png" width="210"/>
   <img src="prints/onboarding_2.png" width="210"/>
+</p>
+
+<p align="center">
   <img src="prints/onboarding_3.png" width="210"/>
   <img src="prints/onboarding_4.png" width="210"/>
 </p>
