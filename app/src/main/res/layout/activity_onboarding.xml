@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+
+    android:padding="24dp"
+
+    android:background="#F5F7FA">
+
+    <!-- TOPO -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/txtPular"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"
+
+            android:text="@string/onboarding_pular"
+
+            android:textColor="#6B7280"
+
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/txtIndicador"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="1/4"
+
+            android:textColor="#6B7280"
+
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+    <!-- PÁGINAS -->
+
+    <ViewFlipper
+        android:id="@+id/viewFlipper"
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:layout_weight="1">
+
+        <!-- PÁGINA 1 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:gravity="center"
+
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="240dp"
+                android:layout_height="240dp"
+
+                android:adjustViewBounds="true"
+
+                android:src="@drawable/onboarding_welcome"
+
+                android:contentDescription="@string/onboarding_titulo_1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="24dp"
+
+                android:text="@string/onboarding_titulo_1"
+
+                android:textColor="#111827"
+
+                android:textSize="30sp"
+
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="12dp"
+
+                android:gravity="center"
+
+                android:text="@string/onboarding_texto_1"
+
+                android:textColor="#6B7280"
+
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <!-- PÁGINA 2 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:gravity="center"
+
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="240dp"
+                android:layout_height="240dp"
+
+                android:adjustViewBounds="true"
+
+                android:src="@drawable/onboarding_calendar"
+
+                android:contentDescription="@string/onboarding_titulo_2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="24dp"
+
+                android:text="@string/onboarding_titulo_2"
+
+                android:textColor="#111827"
+
+                android:textSize="30sp"
+
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="12dp"
+
+                android:gravity="center"
+
+                android:text="@string/onboarding_texto_2"
+
+                android:textColor="#6B7280"
+
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <!-- PÁGINA 3 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:gravity="center"
+
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="240dp"
+                android:layout_height="240dp"
+
+                android:adjustViewBounds="true"
+
+                android:src="@drawable/onboarding_events"
+
+                android:contentDescription="@string/onboarding_titulo_3"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="24dp"
+
+                android:text="@string/onboarding_titulo_3"
+
+                android:textColor="#111827"
+
+                android:textSize="30sp"
+
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="12dp"
+
+                android:gravity="center"
+
+                android:text="@string/onboarding_texto_3"
+
+                android:textColor="#6B7280"
+
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <!-- PÁGINA 4 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:gravity="center"
+
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="240dp"
+                android:layout_height="240dp"
+
+                android:adjustViewBounds="true"
+
+                android:src="@drawable/onboarding_notifications"
+
+                android:contentDescription="@string/onboarding_titulo_4"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="24dp"
+
+                android:text="@string/onboarding_titulo_4"
+
+                android:textColor="#111827"
+
+                android:textSize="30sp"
+
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="12dp"
+
+                android:gravity="center"
+
+                android:text="@string/onboarding_texto_4"
+
+                android:textColor="#6B7280"
+
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="24dp"
+
+                android:gravity="center"
+
+                android:padding="14dp"
+
+                android:text="@string/onboarding_permitir"
+
+                android:textColor="#FFFFFF"
+
+                android:textStyle="bold"
+
+                android:background="@drawable/bg_onboarding_permitir"/>
+        </LinearLayout>
+
+    </ViewFlipper>
+
+    <!-- BOLINHAS -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:gravity="center"
+
+        android:orientation="horizontal"
+
+        android:layout_marginBottom="18dp">
+
+        <TextView
+            android:id="@+id/txtBolinha1"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginHorizontal="4dp"
+
+            android:text="●"
+
+            android:textColor="#111827"
+
+            android:textSize="24sp"/>
+
+        <TextView
+            android:id="@+id/txtBolinha2"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginHorizontal="4dp"
+
+            android:text="○"
+
+            android:textColor="#111827"
+
+            android:textSize="24sp"/>
+
+        <TextView
+            android:id="@+id/txtBolinha3"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginHorizontal="4dp"
+
+            android:text="○"
+
+            android:textColor="#111827"
+
+            android:textSize="24sp"/>
+
+        <TextView
+            android:id="@+id/txtBolinha4"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginHorizontal="4dp"
+
+            android:text="○"
+
+            android:textColor="#111827"
+
+            android:textSize="24sp"/>
+    </LinearLayout>
+
+    <!-- BOTÃO -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnVoltar"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:backgroundTint="#E5E7EB"
+            android:textColor="#111827"
+
+            android:layout_weight="1"
+
+            android:text="@string/onboarding_voltar"/>
+
+        <Button
+            android:id="@+id/btnProximo"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"
+
+            android:layout_marginStart="12dp"
+
+            android:backgroundTint="#4F46E5"
+            android:textColor="#FFFFFF"
+
+            android:text="@string/onboarding_proximo"/>
+    </LinearLayout>
+</LinearLayout>

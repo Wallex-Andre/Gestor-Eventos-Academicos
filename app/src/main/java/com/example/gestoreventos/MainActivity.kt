@@ -1,6 +1,5 @@
 package com.example.gestoreventos
 
-import android.os.Build
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -81,19 +80,6 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-        if (
-            Build.VERSION.SDK_INT >=
-            Build.VERSION_CODES.TIRAMISU
-        ) {
-
-            requestPermissions(
-                arrayOf(
-                    android.Manifest.permission.POST_NOTIFICATIONS
-                ),
-                100
-            )
-        }
-
         db = DBHelper(this)
 
         calendarView =
@@ -166,23 +152,12 @@ class MainActivity : AppCompatActivity() {
 
                             .setItems(meses) { _, which ->
 
-                                mesAtual =
+                                irParaMes(
                                     YearMonth.of(
                                         mesAtual.year,
                                         which + 1
                                     )
-
-                                calendarView.scrollToMonth(
-                                    mesAtual
                                 )
-
-                                dataSelecionada = null
-
-                                carregarTodosEventos()
-
-                                calendarView.notifyCalendarChanged()
-
-                                atualizarMes()
                             }
 
                             .show()
@@ -200,23 +175,12 @@ class MainActivity : AppCompatActivity() {
 
                             .setItems(anos) { _, index ->
 
-                                mesAtual =
+                                irParaMes(
                                     YearMonth.of(
                                         anos[index].toInt(),
                                         mesAtual.monthValue
                                     )
-
-                                calendarView.scrollToMonth(
-                                    mesAtual
                                 )
-
-                                dataSelecionada = null
-
-                                carregarTodosEventos()
-
-                                calendarView.notifyCalendarChanged()
-
-                                atualizarMes()
                             }
 
                             .show()
@@ -282,10 +246,16 @@ class MainActivity : AppCompatActivity() {
                         container.textDia.visibility =
                             View.VISIBLE
 
+                        container.textDia.alpha =
+                            1.0f
+
                     } else {
 
                         container.textDia.visibility =
-                            View.INVISIBLE
+                            View.VISIBLE
+
+                        container.textDia.alpha =
+                            0.35f
                     }
 
                     container.layoutDia.setBackgroundResource(
@@ -336,69 +306,47 @@ class MainActivity : AppCompatActivity() {
                             return@setOnClickListener
                         }
 
-                        if (
-                            dataSelecionada == data.date
-                        ) {
+                        val dataAntiga =
+                            dataSelecionada
 
-                            dataSelecionada = null
+                        dataSelecionada =
+                            data.date
 
-                            carregarTodosEventos()
+                        carregarEventos(
+                            data.date.toString()
+                        )
 
-                            calendarView.notifyCalendarChanged()
+                        mesAtual =
+                            YearMonth.from(data.date)
 
-                        } else {
+                        atualizarMes()
 
-                            dataSelecionada = data.date
+                        if (dataAntiga != null) {
 
-                            carregarEventos(
-                                data.date.toString()
+                            calendarView.notifyDateChanged(
+                                dataAntiga
                             )
-
-                            mesAtual =
-                                YearMonth.from(data.date)
-
-                            atualizarMes()
                         }
 
-                        calendarView.notifyCalendarChanged()
+                        calendarView.notifyDateChanged(
+                            data.date
+                        )
                     }
                 }
             }
 
         btnAnterior.setOnClickListener {
 
-            mesAtual =
+            irParaMes(
                 mesAtual.minusMonths(1)
-
-            calendarView.scrollToMonth(
-                mesAtual
             )
-
-            dataSelecionada = null
-
-            carregarTodosEventos()
-
-            calendarView.notifyCalendarChanged()
-
-            atualizarMes()
         }
 
         btnProximo.setOnClickListener {
 
-            mesAtual =
+            irParaMes(
                 mesAtual.plusMonths(1)
-
-            calendarView.scrollToMonth(
-                mesAtual
             )
-
-            dataSelecionada = null
-
-            carregarTodosEventos()
-
-            calendarView.notifyCalendarChanged()
-
-            atualizarMes()
         }
 
         btnDashboard.setOnClickListener {
@@ -429,16 +377,39 @@ class MainActivity : AppCompatActivity() {
                     EventoActivity::class.java
                 )
 
-            if (dataSelecionada != null) {
+            val dataEvento =
+                dataSelecionada ?: LocalDate.now()
 
-                intent.putExtra(
-                    "data",
-                    dataSelecionada.toString()
-                )
-            }
+            intent.putExtra(
+                "data",
+                dataEvento.toString()
+            )
 
             startActivity(intent)
         }
+    }
+
+    private fun irParaMes(
+        novoMes: YearMonth
+    ) {
+
+        mesAtual =
+            novoMes
+
+        dataSelecionada =
+            mesAtual.atDay(1)
+
+        calendarView.scrollToMonth(
+            mesAtual
+        )
+
+        carregarEventos(
+            dataSelecionada.toString()
+        )
+
+        atualizarMes()
+
+        calendarView.notifyCalendarChanged()
     }
 
     override fun onResume() {
@@ -506,10 +477,10 @@ class MainActivity : AppCompatActivity() {
                 NotificationHelper(this)
                     .mostrarNotificacao(
                         evento.titulo,
-                        "Evento concluído"
+                        "Status do evento atualizado"
                     )
 
-                carregarTodosEventos()
+                carregarEventos(data)
 
                 calendarView.notifyCalendarChanged()
             },

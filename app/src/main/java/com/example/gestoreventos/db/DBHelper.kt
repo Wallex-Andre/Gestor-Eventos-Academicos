@@ -225,46 +225,6 @@ class DBHelper(context: Context) :
         return lista
     }
 
-    fun concluirEvento(id: Int) {
-
-        val db = writableDatabase
-
-        val values = ContentValues()
-
-        if (id > 0) {
-
-            val cursor = db.rawQuery(
-                "SELECT concluido FROM Evento WHERE id = ?",
-                arrayOf(id.toString())
-            )
-
-            if (cursor.moveToFirst()) {
-
-                val atual =
-                    cursor.getInt(0)
-
-                values.put(
-                    CONCLUIDO_COL,
-                    if (atual == 1) 0 else 1
-                )
-
-                values.put(
-                    STATUS_COL,
-                    if (atual == 1)
-                        "Pendente"
-                    else
-                        "Concluído"
-                )
-            }
-
-            cursor.close()
-        }
-
-        db.update(TABLE_NAME, values, "$ID_COL=?", arrayOf(id.toString()))
-
-        db.close()
-    }
-
     fun deletarEvento(id: Int) {
 
         val db = writableDatabase
@@ -325,7 +285,11 @@ class DBHelper(context: Context) :
         titulo: String,
         tipo: String,
         materia: String,
-        descricao: String
+        descricao: String,
+        horaInicio: String,
+        horaFim: String,
+        links: String,
+        prioridade: String
     ) {
 
         val db = writableDatabase
@@ -336,11 +300,15 @@ class DBHelper(context: Context) :
         values.put(TIPO_COL, tipo)
         values.put(MATERIA_COL, materia)
         values.put(DESCRICAO_COL, descricao)
+        values.put(HORA_INICIO_COL, horaInicio)
+        values.put(HORA_FIM_COL, horaFim)
+        values.put(LINKS_COL, links)
+        values.put(PRIORIDADE_COL, prioridade)
 
         db.update(
-            "Evento",
+            TABLE_NAME,
             values,
-            "id=?",
+            "$ID_COL=?",
             arrayOf(id.toString())
         )
 

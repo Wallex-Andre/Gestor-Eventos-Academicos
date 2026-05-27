@@ -17,14 +17,43 @@ class SplashActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_splash)
 
-        Handler(Looper.getMainLooper()).postDelayed({
+        Handler(
+            Looper.getMainLooper()
+        ).postDelayed({
 
-            startActivity(
-                Intent(this, MainActivity::class.java)
-            )
+            val prefs =
+                getSharedPreferences(
+                    "app",
+                    MODE_PRIVATE
+                )
+
+            val onboardingConcluido =
+                prefs.getBoolean(
+                    "onboarding_concluido",
+                    false
+                )
+
+            if (onboardingConcluido) {
+
+                startActivity(
+                    Intent(
+                        this,
+                        MainActivity::class.java
+                    )
+                )
+
+            } else {
+
+                startActivity(
+                    Intent(
+                        this,
+                        OnboardingActivity::class.java
+                    )
+                )
+            }
 
             finish()
 
-        }, 2000)
+        }, 1600)
     }
 }

@@ -1,8 +1,8 @@
 # 📚 Gestor de Eventos Acadêmicos
 
-Aplicativo Android desenvolvido em Kotlin para gerenciamento de eventos, tarefas, provas, trabalhos e compromissos acadêmicos.
+Aplicativo Android desenvolvido em Kotlin para auxiliar estudantes na organização de eventos, tarefas, provas, trabalhos, reuniões e compromissos acadêmicos.
 
-O sistema foi criado com foco em organização estudantil, produtividade e praticidade, utilizando calendário interativo, notificações e gerenciamento completo de eventos.
+O projeto foi criado com foco em produtividade, controle de prazos e organização da rotina estudantil, utilizando calendário interativo, gerenciamento de eventos, prioridades, notificações e persistência local com SQLite.
 
 ---
 
@@ -14,15 +14,9 @@ Wallex André Adriano dos Santos
 
 # 🎯 Objetivo do Projeto
 
-O objetivo do aplicativo é auxiliar estudantes na organização da rotina acadêmica através de um sistema simples, moderno e funcional.
+O objetivo do **Gestor de Eventos Acadêmicos** é oferecer uma ferramenta simples, funcional e intuitiva para estudantes organizarem sua vida acadêmica.
 
-O aplicativo permite:
-
-- cadastrar eventos
-- organizar compromissos
-- visualizar tarefas no calendário
-- acompanhar eventos pendentes
-- controlar atividades concluídas
+Com o aplicativo, o usuário pode cadastrar compromissos importantes, visualizar eventos por data, acompanhar atividades pendentes, marcar tarefas como concluídas e consultar todos os eventos cadastrados.
 
 ---
 
@@ -33,7 +27,9 @@ O aplicativo permite:
 - SQLite
 - RecyclerView
 - Material Design
-- CalendarView (Kizitonwose)
+- CalendarView Kizitonwose
+- SharedPreferences
+- Notificações Android
 
 ---
 
@@ -41,16 +37,16 @@ O aplicativo permite:
 
 ## ✅ Cadastro de Eventos
 
-O sistema permite cadastrar:
+O aplicativo permite cadastrar eventos acadêmicos com:
 
 - título
-- tipo
+- tipo/tag
 - matéria
 - descrição
 - data
 - horário inicial
 - horário final
-- links
+- link
 - prioridade
 
 ---
@@ -59,7 +55,9 @@ O sistema permite cadastrar:
 
 - navegação entre meses
 - seleção de dias
-- indicador visual de eventos
+- visualização de eventos por data
+- exibição de dias do mês anterior e próximo
+- indicador visual em dias com eventos
 - destaque do dia atual
 - destaque do dia selecionado
 
@@ -67,19 +65,31 @@ O sistema permite cadastrar:
 
 ## 📌 Gerenciamento de Eventos
 
-- visualizar eventos
-- editar eventos
+- listar eventos cadastrados
+- editar todas as informações do evento
 - excluir eventos
-- concluir eventos
+- marcar evento como concluído
 - desfazer conclusão
+- identificar eventos pendentes e atrasados
 
 ---
 
-## 🔔 Sistema de Notificações
+## 🔔 Notificações
 
-- evento criado
-- evento concluído
-- evento excluído
+- aviso ao criar evento
+- aviso ao editar evento
+- aviso ao concluir evento
+- aviso ao excluir evento
+- solicitação de permissão de notificações no onboarding
+
+---
+
+## 🎨 Personalização
+
+- tema claro
+- tema escuro
+- tema automático do sistema
+- onboarding inicial com explicação das funções
 
 ---
 
@@ -88,6 +98,12 @@ O sistema permite cadastrar:
 ## 🟣 Splash Screen
 
 <img src="prints/splash_screen.png" width="260"/>
+
+---
+
+## 🧭 Onboarding
+
+<img src="prints/onboarding.png" width="260"/>
 
 ---
 
@@ -100,12 +116,6 @@ O sistema permite cadastrar:
 ## ➕ Cadastro de Evento
 
 <img src="prints/cadastro_evento.png" width="260"/>
-
----
-
-## 📅 Todos os Eventos
-
-<img src="prints/todos_eventos.png" width="260"/>
 
 ---
 
@@ -125,15 +135,22 @@ O sistema permite cadastrar:
 
 ## 📱 APK do Aplicativo
 
-[⬇️ Baixar APK](app-debug.apk)
+[⬇️ Baixar APK](gestor-eventos-academicos.apk)
 
 ---
 
-# 🚀 Como Instalar o APK
-
-## Android
+# 🚀 Como Instalar o APK no Android
 
 1. Baixe o arquivo:
 
 ```text
-app-debug.apk
+gestor-eventos-academicos.apk
+
+# 🚀 Como Executar o Projeto
+
+## 1️⃣ Clonar o repositório
+
+Abra o terminal e execute:
+
+```bash
+git clone https://github.com/Wallex-Andre/Gestor-Eventos-Academicos.git

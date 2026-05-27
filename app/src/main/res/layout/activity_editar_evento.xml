@@ -1,121 +1,190 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:background="?android:colorBackground">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:orientation="vertical"
+
         android:padding="16dp">
 
-        <!-- Título da tela -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:text="Editar Evento"
-            android:textSize="24sp"
-            android:textStyle="bold"
+
             android:textColor="?android:textColorPrimary"
+
+            android:textSize="24sp"
+
+            android:textStyle="bold"
+
             android:layout_marginBottom="20dp"/>
 
-        <!-- Campo título -->
         <EditText
             android:id="@+id/edtTitulo"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Título do evento"
-            android:textColor="?android:textColorPrimary"
-            android:textColorHint="#BBBBBB"
-            android:padding="12dp"
-            android:backgroundTint="#3F51B5"/>
 
-        <!-- Tipo / Tag -->
+            android:hint="@string/titulo"
+
+            android:inputType="textCapSentences"
+
+            android:autofillHints="titulo"
+
+            android:textColor="?android:textColorPrimary"
+
+            android:textColorHint="#BBBBBB"/>
+
         <AutoCompleteTextView
             android:id="@+id/edtTipo"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Tipo / Tag"
-            android:textColor="?android:textColorPrimary"
-            android:textColorHint="#BBBBBB"
-            android:popupBackground="#1E1E1E"
-            android:padding="12dp"
-            android:layout_marginTop="12dp"
-            android:backgroundTint="#3F51B5"/>
 
-        <!-- Matéria -->
-        <EditText
+            android:layout_marginTop="12dp"
+
+            android:hint="@string/tipo"
+
+            android:inputType="textCapWords"
+
+            android:autofillHints="tipo"
+
+            android:textColor="?android:textColorPrimary"
+
+            android:textColorHint="#BBBBBB"/>
+
+        <AutoCompleteTextView
             android:id="@+id/edtMateria"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Matéria"
-            android:textColor="?android:textColorPrimary"
-            android:textColorHint="#BBBBBB"
-            android:padding="12dp"
-            android:layout_marginTop="12dp"
-            android:backgroundTint="#3F51B5"/>
 
-        <!-- Descrição -->
+            android:layout_marginTop="12dp"
+
+            android:hint="@string/materia"
+
+            android:inputType="textCapWords"
+
+            android:autofillHints="materia"
+
+            android:textColor="?android:textColorPrimary"
+
+            android:textColorHint="#BBBBBB"/>
+
         <EditText
             android:id="@+id/edtDescricao"
+
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:hint="Descrição"
-            android:gravity="top"
-            android:minLines="4"
-            android:textColor="?android:textColorPrimary"
-            android:textColorHint="#BBBBBB"
-            android:padding="12dp"
-            android:layout_marginTop="12dp"
-            android:backgroundTint="#3F51B5"/>
 
-        <!-- Hora início -->
+            android:layout_marginTop="12dp"
+
+            android:hint="@string/descricao"
+
+            android:gravity="top"
+
+            android:inputType="textMultiLine|textCapSentences"
+
+            android:autofillHints="descricao"
+
+            android:textColor="?android:textColorPrimary"
+
+            android:textColorHint="#BBBBBB"/>
+
         <EditText
             android:id="@+id/edtInicio"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Hora início"
-            android:textColor="?android:textColorPrimary"
-            android:textColorHint="#BBBBBB"
-            android:padding="12dp"
-            android:layout_marginTop="12dp"
-            android:backgroundTint="#3F51B5"/>
 
-        <!-- Hora fim -->
+            android:layout_marginTop="12dp"
+
+            android:hint="@string/inicio"
+
+            android:focusable="false"
+
+            android:clickable="true"
+
+            android:cursorVisible="false"
+
+            android:inputType="time"
+
+            android:autofillHints="inicio"
+
+            android:textColor="?android:textColorPrimary"
+
+            android:textColorHint="#BBBBBB"/>
+
         <EditText
             android:id="@+id/edtFim"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Hora fim"
-            android:textColor="?android:textColorPrimary"
-            android:textColorHint="#BBBBBB"
-            android:padding="12dp"
-            android:layout_marginTop="12dp"
-            android:backgroundTint="#3F51B5"/>
 
-        <!-- Links -->
+            android:layout_marginTop="12dp"
+
+            android:hint="@string/fim"
+
+            android:focusable="false"
+
+            android:clickable="true"
+
+            android:cursorVisible="false"
+
+            android:inputType="time"
+
+            android:autofillHints="fim"
+
+            android:textColor="?android:textColorPrimary"
+
+            android:textColorHint="#BBBBBB"/>
+
         <EditText
             android:id="@+id/edtLinks"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Links"
-            android:textColor="?android:textColorPrimary"
-            android:textColorHint="#BBBBBB"
-            android:padding="12dp"
-            android:layout_marginTop="12dp"
-            android:backgroundTint="#3F51B5"/>
 
-        <!-- Botão salvar -->
+            android:layout_marginTop="12dp"
+
+            android:hint="@string/links"
+
+            android:inputType="textUri"
+
+            android:autofillHints="links"
+
+            android:textColor="?android:textColorPrimary"
+
+            android:textColorHint="#BBBBBB"/>
+
+        <Spinner
+            android:id="@+id/spinnerPrioridade"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="12dp"/>
+
         <Button
             android:id="@+id/btnSalvar"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Salvar Alterações"
-            android:textStyle="bold"
-            android:layout_marginTop="24dp"/>
 
+            android:layout_marginTop="24dp"
+
+            android:text="Salvar Alterações"/>
     </LinearLayout>
 
 </ScrollView>

@@ -357,6 +357,26 @@ class EventoAdapter(
                         evento.descricao
                     )
 
+                    intent.putExtra(
+                        "horaInicio",
+                        evento.horaInicio
+                    )
+
+                    intent.putExtra(
+                        "horaFim",
+                        evento.horaFim
+                    )
+
+                    intent.putExtra(
+                        "links",
+                        evento.links
+                    )
+
+                    intent.putExtra(
+                        "prioridade",
+                        evento.prioridade
+                    )
+
                     context.startActivity(intent)
                 }
 

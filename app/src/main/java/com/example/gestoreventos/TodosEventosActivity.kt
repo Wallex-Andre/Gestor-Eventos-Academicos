@@ -6,61 +6,75 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gestoreventos.adapter.EventoAdapter
 import com.example.gestoreventos.db.DBHelper
+import com.example.gestoreventos.utils.NotificationHelper
 import com.example.gestoreventos.utils.ThemeManager
 
 class TodosEventosActivity : AppCompatActivity() {
 
+    private lateinit var recycler:
+            RecyclerView
+
+    private lateinit var db:
+            DBHelper
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         ThemeManager.aplicarTema(this)
+
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_todos_eventos)
 
-        val recycler =
-            findViewById<RecyclerView>(
-                R.id.recyclerTodos
-            )
+        recycler =
+            findViewById(R.id.recyclerTodos)
 
         recycler.layoutManager =
             LinearLayoutManager(this)
 
-        val db = DBHelper(this)
+        db =
+            DBHelper(this)
 
-        val lista =
-            db.getTodosEventos()
+        carregarLista()
+    }
+
+    private fun carregarLista() {
 
         val adapter =
             EventoAdapter(
 
                 context = this,
 
-                lista = lista,
+                lista = db.getTodosEventos(),
 
                 onConcluir = { evento ->
 
-                    db.concluirEvento(evento.id)
+                    db.alterarConclusao(
+                        evento.id,
+                        if (evento.concluido == 1) 0 else 1
+                    )
 
-                    recycler.adapter =
-                        EventoAdapter(
-                            context = this,
-                            lista = db.getTodosEventos(),
-                            onConcluir = { },
-                            onExcluir = { }
+                    NotificationHelper(this)
+                        .mostrarNotificacao(
+                            evento.titulo,
+                            "Status do evento atualizado"
                         )
+
+                    carregarLista()
                 },
 
                 onExcluir = { evento ->
 
-                    db.deletarEvento(evento.id)
+                    db.deletarEvento(
+                        evento.id
+                    )
 
-                    recycler.adapter =
-                        EventoAdapter(
-                            context = this,
-                            lista = db.getTodosEventos(),
-                            onConcluir = { },
-                            onExcluir = { }
+                    NotificationHelper(this)
+                        .mostrarNotificacao(
+                            evento.titulo,
+                            "Evento excluído"
                         )
+
+                    carregarLista()
                 }
             )
 
